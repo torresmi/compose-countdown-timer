@@ -20,4 +20,5 @@ import androidx.compose.ui.graphics.Color
 val lightGreen100 = Color(0xFFdcedc8)
 val lightGreen500 = Color(0xFF8bc34a)
 val lightGreen700 = Color(0xFF689f38)
+val lightGreen900 = Color(0xFF33691e)
 val brown500 = Color(0xFF795548)
