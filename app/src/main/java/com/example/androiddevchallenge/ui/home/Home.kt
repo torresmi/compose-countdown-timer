@@ -73,16 +73,20 @@ fun Home(
 
 @Composable
 private fun TimerDisplay(timer: HomeViewModel.Timer) {
-    val text = when (timer) {
+    when (timer) {
         is HomeViewModel.Timer.Running -> {
             val remainingTime = SimpleDateFormat(TIME_FORMAT, Locale.getDefault())
                 .format(Date(timer.remainingTimeMillis))
-            stringResource(id = R.string.home_timer, remainingTime)
-        }
-        is HomeViewModel.Timer.Stopped -> stringResource(id = R.string.home_start)
-    }
+            val text = stringResource(id = R.string.home_timer, remainingTime)
 
-    Text(text = text)
+            Text(text = text, style = MaterialTheme.typography.h1)
+        }
+        is HomeViewModel.Timer.Stopped -> {
+            val text = stringResource(id = R.string.home_start)
+
+            Text(text = text, style = MaterialTheme.typography.h4)
+        }
+    }
 }
 
 @Composable
